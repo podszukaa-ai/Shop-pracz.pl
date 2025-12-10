@@ -1,0 +1,139 @@
+    
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #050505;
+    color: #e6e6e6;
+    overflow-x: hidden;
+    font-family: Orbitron;
+}
+
+/* === NEON GLOW === */
+:root {
+    --neon-cyan: #00f0ff;
+    --neon-purple: #b300ff;
+    --neon-yellow: #ffe600;
+    --neon-dark: #0a0a0a;
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #000, #0f001a, #000);
+    border-bottom: 4px solid var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+header img {
+    width: 40vw !important;
+    height: auto !important;
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 8px var(--neon-yellow);
+}
+
+/* === MAIN BOX AREA === */
+#box-of-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* === SMALL BOXES === */
+.box, .box-2nd {
+    width: 200px;
+    height: 200px;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan),
+                inset 0 0 10px var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #060606;
+    transition: 0.3s;
+}
+
+.box a, .box-2nd a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* HOVER EFFECT */
+.box:hover, .box-2nd:hover {
+    transform: scale(1.07);
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 12px var(--neon-yellow);
+}
+
+.box:hover a, .box-2nd:hover a {
+    color: var(--neon-yellow);
+}
+
+/* === ABOUT US BIG BOX === */
+#aboutus {
+    width: 330px;
+    min-height: 200px;
+    border: 3px solid var(--neon-purple);
+    box-shadow: 0 0 15px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+    padding: 20px;
+    color: var(--neon-purple);
+    background: #080008;
+    font-size: 1.1rem;
+}
+
+/* === CONTACT BOX === */
+#contact-box {
+    width: 330px;
+    min-height: 200px;
+    border: 3px solid var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    padding: 15px;
+    background: #1a1a00;
+    color: var(--neon-yellow);
+    font-size: 1rem;
+}
+
+/* === FOOTER === */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* === ANIMACJA MIGOCZĄCEGO NEONU === */
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 65%, 100% {
+        opacity: 1;
+    }
+    19%, 23%, 55% {
+        opacity: 0.2;
+    }
+}
+
+/* Migotanie nagłówka */
+header p {
+    animation: neonFlicker 3s infinite;
+}
