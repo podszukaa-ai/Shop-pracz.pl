@@ -15,11 +15,11 @@ CREATE TABLE zamowienia (
     FOREIGN KEY (produkt_id) REFERENCES produkty(id)
 );
 
--- Dodanie produktów z kategorii "dom"
+-- Dodanie produktów
 
 INSERT INTO produkty (nazwa, cena, opis) VALUES
-('Czajnik elektryczny', 129.99, 'Produkt z kategorii dom – czajnik elektryczny'),
-('Odkurzacz bezprzewodowy', 799.00, 'Produkt z kategorii dom – odkurzacz'),
-('Zestaw garnków', 349.50, 'Produkt z kategorii dom – komplet garnków'),
-('Lampka nocna', 89.90, 'Produkt z kategorii dom – lampka do sypialni'),
-('Deska do prasowania', 159.00, 'Produkt z kategorii dom – deska do prasowania');
+('Mop obrotowy', 149.99, 'Mop do mycia podłóg'),
+('Odkurzacz bezprzewodowy', 799.00, 'Odkurzacz do sprzątania domu'),
+('Zestaw środków czystości', 89.50, 'Komplet środków do sprzątania'),
+('Ściereczki z mikrofibry', 29.90, 'Ściereczki do czyszczenia różnych powierzchni'),
+('Miotła z szufelką', 39.99, 'Zestaw do zamiatania podłóg');
