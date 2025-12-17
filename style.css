@@ -32,7 +32,7 @@ header {
 }
 
 header img {
-    width: 40vw !important;
+    width: 20vw !important;
     height: auto !important;
     filter: drop-shadow(0 0 10px var(--neon-cyan));
 }
@@ -67,7 +67,7 @@ header p {
     transition: 0.3s;
 }
 
-.box a, .box-2nd a {
+#box-of-boxes a {
     color: var(--neon-cyan);
     text-decoration: none;
     font-weight: bold;
@@ -82,7 +82,7 @@ header p {
                 inset 0 0 12px var(--neon-yellow);
 }
 
-.box:hover a, .box-2nd:hover a {
+#box-of-boxes a:hover{ 
     color: var(--neon-yellow);
 }
 
