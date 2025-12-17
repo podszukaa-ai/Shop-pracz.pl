@@ -34,7 +34,7 @@ header {
 header img {
     width: 20vw !important;
     height: auto !important;
-    filter: drop-shadow(0 0 10px var(--neon-cyan));
+    mix-blend-mode: screen;
 }
 
 header p {
@@ -136,4 +136,102 @@ footer {
 /* Migotanie nagłówka */
 header p {
     animation: neonFlicker 3s infinite;
+}
+/* =====================================================
+   DOM.HTML – MENU (#nav) – KAFELKI JAK PRODUKTY
+   ===================================================== */
+
+/* kontener menu – tylko dom.html */
+#nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+/* reset stylu linków */
+#nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* kafelek menu – bazuje na .box-2nd */
+#nav .box-2nd {
+    width: 100%;           /* nadpisuje 200px */
+    height: 120px;         /* niższe kafelki */
+
+    background: #060606;
+    border: 3px solid var(--neon-cyan);
+    box-shadow:
+        0 0 15px var(--neon-cyan),
+        inset 0 0 10px var(--neon-cyan);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--neon-cyan);
+
+    transition: transform 0.2s ease;
+}
+
+/* hover */
+#nav .box-2nd:hover {
+    transform: scale(1.05);
+    border-color: var(--neon-yellow);
+    color: var(--neon-yellow);
+    box-shadow:
+        0 0 20px var(--neon-yellow),
+        inset 0 0 14px var(--neon-yellow);
+}
+
+/* =====================================================
+   CIĄGŁE, NIEZALEŻNE MRUGANIE
+   ===================================================== */
+@keyframes navConstantFlicker {
+    0%   { opacity: 1; }
+    10%  { opacity: 0.45; }
+    20%  { opacity: 1; }
+    30%  { opacity: 0.6; }
+    40%  { opacity: 1; }
+    50%  { opacity: 0.35; }
+    60%  { opacity: 1; }
+    70%  { opacity: 0.55; }
+    80%  { opacity: 1; }
+    90%  { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* różne prędkości = pseudo-losowo */
+#nav a:nth-child(1) .box-2nd {
+    animation: navConstantFlicker 2.6s infinite linear;
+}
+
+#nav a:nth-child(2) .box-2nd {
+    animation: navConstantFlicker 3.4s infinite linear;
+}
+
+#nav a:nth-child(3) .box-2nd {
+    animation: navConstantFlicker 2.1s infinite linear;
+}
+
+#nav a:nth-child(4) .box-2nd {
+    animation: navConstantFlicker 3.9s infinite linear;
+}
+
+/* =====================================================
+   RESPONSIVE – MENU DOM
+   ===================================================== */
+@media (max-width: 1000px) {
+    #nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #nav {
+        grid-template-columns: 1fr;
+    }
 }
