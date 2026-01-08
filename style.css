@@ -309,3 +309,164 @@ header p {
         grid-template-columns: 1fr;
     }
 }
+/* ================= FORMULARZ ZAMÓWIENIA ================= */
+
+#formularz {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    border: 3px solid var(--neon-yellow);
+    box-shadow: 0 0 20px var(--neon-yellow),
+                inset 0 0 12px var(--neon-yellow);
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+#formularz p {
+    margin-bottom: 15px;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 6px var(--neon-yellow);
+}
+
+/* ================= INPUTY ================= */
+
+#formularz input[type="text"],
+#formularz input[type="email"],
+#formularz input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    outline: none;
+    box-shadow: inset 0 0 8px var(--neon-cyan);
+    transition: 0.3s;
+}
+
+#formularz input::placeholder {
+    color: rgba(0, 240, 255, 0.5);
+}
+
+#formularz input:focus {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 12px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    color: var(--neon-yellow);
+}
+
+/* ================= PRZYCISK SUBMIT ================= */
+
+#formularz input[type="submit"] {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: transparent;
+    border: 3px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    animation: submitFlicker 2.8s infinite;
+    transition: 0.3s;
+}
+
+#formularz input[type="submit"]:hover {
+    background: var(--neon-yellow);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-yellow);
+}
+
+/* ================= MRUGANIE PRZYCISKU ================= */
+
+@keyframes submitFlicker {
+    0% { opacity: 1; }
+    15% { opacity: 0.6; }
+    25% { opacity: 1; }
+    40% { opacity: 0.4; }
+    55% { opacity: 1; }
+    70% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* ================= FORMULARZ ================= */
+
+
+#tabelka {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 3px solid var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#tabelka table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--neon-purple);
+}
+
+#tabelka th,
+#tabelka td {
+    padding: 10px;
+    border-bottom: 1px solid var(--neon-purple);
+    text-align: left;
+}
+
+#tabelka th {
+    text-shadow: 0 0 6px var(--neon-purple);
+}/* ================= UKŁAD FORMULARZ + TABELKA ================= */
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
+}
+
+/* lekko zmniejszamy szerokości żeby ładnie siadło obok siebie */
+#formularz,
+#tabelka {
+    max-width: 420px;
+    width: 100%;
+}
+/* ================= KOSZYK / ZAMÓW POD LOGO ================= */
+
+#basket-section {
+    margin-top: 25px; /* ODSUNIĘCIE OD SLOGANU */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* tekst ilości produktów */
+#items-added {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+    font-size: 1rem;
+}
+
+/* ================= PRZYCISK ZAMÓW ================= */
+
+#order-items {
+    background: transparent;
+    border: 3px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    animation: submitFlicker 3s infinite;
+    transition: 0.3s;
+}
+
+#order-items:hover {
+    background: var(--neon-yellow);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-yellow);
+}
