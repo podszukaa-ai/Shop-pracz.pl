@@ -1,0 +1,476 @@
+    
+/* === RESET === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #050505;
+    color: #e6e6e6;
+    overflow-x: hidden;
+    font-family: Orbitron;
+}
+
+/* === NEON GLOW === */
+:root {
+    --neon-cyan: #00f0ff;
+    --neon-purple: #b300ff;
+    --neon-yellow: #ffe600;
+    --neon-dark: #0a0a0a;
+}
+
+/* === HEADER === */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #000, #0f001a, #000);
+    border-bottom: 4px solid var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+header img {
+    width: 20vw !important;
+    height: auto !important;
+    mix-blend-mode: screen;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 8px var(--neon-yellow);
+}
+
+/* === MAIN BOX AREA === */
+#box-of-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+/* === SMALL BOXES === */
+.box, .box-2nd {
+    width: 200px;
+    height: 200px;
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan),
+                inset 0 0 10px var(--neon-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #060606;
+    transition: 0.3s;
+}
+
+#box-of-boxes a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* HOVER EFFECT */
+.box:hover, .box-2nd:hover {
+    transform: scale(1.07);
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 12px var(--neon-yellow);
+}
+
+#box-of-boxes a:hover{ 
+    color: var(--neon-yellow);
+}
+
+/* === ABOUT US BIG BOX === */
+#aboutus {
+    width: 330px;
+    min-height: 200px;
+    border: 3px solid var(--neon-purple);
+    box-shadow: 0 0 15px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+    padding: 20px;
+    color: var(--neon-purple);
+    background: #080008;
+    font-size: 1.1rem;
+}
+
+/* === CONTACT BOX === */
+#contact-box {
+    width: 330px;
+    min-height: 200px;
+    border: 3px solid var(--neon-yellow);
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    padding: 15px;
+    background: #1a1a00;
+    color: var(--neon-yellow);
+    font-size: 1rem;
+}
+
+/* ================= GRID PRODUKTÓW ================= */
+#box-of-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 60px 5%;
+}
+
+/* ================= ITEM ================= */
+.item {
+    background: #060606;
+    border: 3px solid var(--neon-cyan);
+    box-shadow:
+        0 0 15px var(--neon-cyan),
+        inset 0 0 10px var(--neon-cyan);
+
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.item:hover {
+    transform: scale(1.03);
+    border-color: var(--neon-yellow);
+    box-shadow:
+        0 0 18px var(--neon-yellow),
+        inset 0 0 12px var(--neon-yellow);
+}
+
+.item img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.item h2 {
+    color: var(--neon-purple);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.item p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.item h3 {
+    color: var(--neon-yellow);
+    margin-bottom: 15px;
+}
+
+/* ================= BUTTON ================= */
+.item button {
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.item button:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+    #nav,
+    #box-of-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #nav,
+    #box-of-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Migotanie nagłówka */
+header p {
+    animation: neonFlicker 3s infinite;
+}
+/* =====================================================
+   DOM.HTML – MENU (#nav) – KAFELKI JAK PRODUKTY
+   ===================================================== */
+
+/* kontener menu – tylko dom.html */
+#nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+/* reset stylu linków */
+#nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* kafelek menu – bazuje na .box-2nd */
+#nav .box-2nd {
+    width: 100%;           /* nadpisuje 200px */
+    height: 120px;         /* niższe kafelki */
+
+    background: #060606;
+    border: 3px solid var(--neon-cyan);
+    box-shadow:
+        0 0 15px var(--neon-cyan),
+        inset 0 0 10px var(--neon-cyan);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--neon-cyan);
+
+    transition: transform 0.2s ease;
+}
+
+/* hover */
+#nav .box-2nd:hover {
+    transform: scale(1.05);
+    border-color: var(--neon-yellow);
+    color: var(--neon-yellow);
+    box-shadow:
+        0 0 20px var(--neon-yellow),
+        inset 0 0 14px var(--neon-yellow);
+}
+
+/* =====================================================
+   CIĄGŁE, NIEZALEŻNE MRUGANIE
+   ===================================================== */
+@keyframes navConstantFlicker {
+    0%   { opacity: 1; }
+    10%  { opacity: 0.45; }
+    20%  { opacity: 1; }
+    30%  { opacity: 0.6; }
+    40%  { opacity: 1; }
+    50%  { opacity: 0.35; }
+    60%  { opacity: 1; }
+    70%  { opacity: 0.55; }
+    80%  { opacity: 1; }
+    90%  { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+/* różne prędkości = pseudo-losowo */
+#nav a:nth-child(1) .box-2nd {
+    animation: navConstantFlicker 2.6s infinite linear;
+}
+
+#nav a:nth-child(2) .box-2nd {
+    animation: navConstantFlicker 3.4s infinite linear;
+}
+
+#nav a:nth-child(3) .box-2nd {
+    animation: navConstantFlicker 2.1s infinite linear;
+}
+
+#nav a:nth-child(4) .box-2nd {
+    animation: navConstantFlicker 3.9s infinite linear;
+}
+
+/* =====================================================
+   RESPONSIVE – MENU DOM
+   ===================================================== */
+@media (max-width: 1000px) {
+    #nav {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    #nav {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================= FORMULARZ ZAMÓWIENIA ================= */
+
+#formularz {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    border: 3px solid var(--neon-yellow);
+    box-shadow: 0 0 20px var(--neon-yellow),
+                inset 0 0 12px var(--neon-yellow);
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+#formularz p {
+    margin-bottom: 15px;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 6px var(--neon-yellow);
+}
+
+/* ================= INPUTY ================= */
+
+#formularz input[type="text"],
+#formularz input[type="email"],
+#formularz input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    outline: none;
+    box-shadow: inset 0 0 8px var(--neon-cyan);
+    transition: 0.3s;
+}
+
+#formularz input::placeholder {
+    color: rgba(0, 240, 255, 0.5);
+}
+
+#formularz input:focus {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 12px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    color: var(--neon-yellow);
+}
+
+/* ================= PRZYCISK SUBMIT ================= */
+
+#formularz input[type="submit"] {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: transparent;
+    border: 3px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    animation: submitFlicker 2.8s infinite;
+    transition: 0.3s;
+}
+
+#formularz input[type="submit"]:hover {
+    background: var(--neon-yellow);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-yellow);
+}
+
+/* ================= MRUGANIE PRZYCISKU ================= */
+
+@keyframes submitFlicker {
+    0% { opacity: 1; }
+    15% { opacity: 0.6; }
+    25% { opacity: 1; }
+    40% { opacity: 0.4; }
+    55% { opacity: 1; }
+    70% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* ================= FORMULARZ ================= */
+
+
+#tabelka {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 3px solid var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple),
+                inset 0 0 10px var(--neon-purple);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#tabelka table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--neon-purple);
+}
+
+#tabelka th,
+#tabelka td {
+    padding: 10px;
+    border-bottom: 1px solid var(--neon-purple);
+    text-align: left;
+}
+
+#tabelka th {
+    text-shadow: 0 0 6px var(--neon-purple);
+}/* ================= UKŁAD FORMULARZ + TABELKA ================= */
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
+}
+
+/* lekko zmniejszamy szerokości żeby ładnie siadło obok siebie */
+#formularz,
+#tabelka {
+    max-width: 420px;
+    width: 100%;
+}
+/* ================= KOSZYK / ZAMÓW POD LOGO ================= */
+
+#basket-section {
+    margin-top: 25px; /* ODSUNIĘCIE OD SLOGANU */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* tekst ilości produktów */
+#items-added {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+    font-size: 1rem;
+}
+
+/* ================= PRZYCISK ZAMÓW ================= */
+
+.order-items {
+    background: transparent;
+    border: 3px solid var(--neon-yellow);
+    color: var(--neon-yellow);
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-yellow),
+                inset 0 0 10px var(--neon-yellow);
+    animation: submitFlicker 3s infinite;
+    transition: 0.3s;
+}
+
+.order-items:hover {
+    background: var(--neon-yellow);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-yellow);
+}
+
+.order-items:active {
+    box-shadow: 0 0 70px var(--neon-yellow);
+}
